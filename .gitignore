@@ -29,9 +29,10 @@ node_modules
 
 .sass-cache/
 .bower-cache/
+.bower-tmp/
 .bower-registry/
 
-
+js/build/
 styles/css/
 libs/
 lib

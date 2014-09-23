@@ -17,9 +17,6 @@ module.exports = function(grunt) {
         startPage: '/controllers',
         scripts: ['js/build/libs.js',
           'js/build/controllers.js',
-          'js/build/directives.js',
-          'js/build/filters.js',
-          'js/build/modules.js',
           'js/build/services.js'
         ],
         title: 'Diplomacy Manager Documentation'
@@ -75,18 +72,12 @@ module.exports = function(grunt) {
         src: [
           'libs/angular/angular.js',
           'libs/angular-animate/angular-animate.js',
-          'libs/angular-cookies/angular-cookies.js',
           'libs/angular-loader/angular-loader.js',
           'libs/angular-mocks/angular-mocks.js',
           'libs/angular-route/angular-route.js',
-          'libs/angular-sanitize/angular-sanitize.js',
           'libs/angular-scenario/angular-scenario.js'
         ],
         dest: 'js/build/libs.js'
-      },
-      directives: {
-        src: ['js/src/directives/**/*.js'],
-        dest: 'js/build/directives.js'
       },
       controllers: {
         src: ['js/src/controllers/**/*.js'],
@@ -96,10 +87,6 @@ module.exports = function(grunt) {
         src: ['js/src/services/**/*.js'],
         dest: 'js/build/services.js'
       },
-      filters: {
-        src: ['js/src/filters/**/*.js'],
-        dest: 'js/build/filters.js'
-      }
     },
 
     uglify: {
@@ -111,9 +98,6 @@ module.exports = function(grunt) {
           'js/build/app.min.js': [
             'js/src/app.js',
             'js/build/controllers.js',
-            'js/build/directives.js',
-            'js/build/filters.js',
-            'js/build/modules.js',
             'js/build/services.js'
           ],
           'js/build/libs.min.js': [
@@ -167,27 +151,9 @@ module.exports = function(grunt) {
           }
         },
       },
-      directives: {
-        files: ['js/src/directives/**/*.js'],
-        tasks: ['concat:directives'],
-        options: {
-          livereload: {
-            port: 9001
-          }
-        },
-      },
       services: {
         files: ['js/src/services/*.js'],
         tasks: ['concat:services'],
-        options: {
-          livereload: {
-            port: 9001
-          }
-        },
-      },
-      filters: {
-        files: ['js/src/filters/**/*.js'],
-        tasks: ['concat:filters'],
         options: {
           livereload: {
             port: 9001
@@ -212,7 +178,7 @@ module.exports = function(grunt) {
         },
       },
       html: {
-        files: ['views/*.html', 'views/**/*.html'],
+        files: ['views/*.html', 'index.html'],
         options: {
           livereload: {
             port: 9001
@@ -230,12 +196,10 @@ module.exports = function(grunt) {
           open: true,
         }
       },
-    },
-
+    }
   });
 
   grunt.registerTask('documentation', ['ngdocs']);
-
 
   grunt.registerTask('default', function() {
     grunt.task.run([
@@ -248,8 +212,7 @@ module.exports = function(grunt) {
       'bower:install',
       'concat',
       'less',
-      'uglify',
-
+      'uglify'
     ]);
   });
 
@@ -257,6 +220,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'bower:install',
       'sass',
+      'concat',
       'connect',
       'watch'
     ]);
