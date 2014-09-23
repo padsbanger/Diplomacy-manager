@@ -1,0 +1,52 @@
+{
+  "name": "Diplomacy-Manager",
+  "author": "kontakt@michal-lach.pl",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "~1.3.8",
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "*",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-karma": "*",
+    "grunt-newer": "~0.5.4",
+    "grunt-ngdocs": "*",
+    "grunt-ngmin": "~0.0.2",
+    "grunt-open": "~0.2.0",
+    "grunt-protractor-runner": "*",
+    "grunt-rev": "~0.1.0",
+    "grunt-scriptlinker": "*",
+    "jasmine-reporters": "*",
+    "karma": "*",
+    "karma-chrome-launcher": "*",
+    "karma-coverage": "*",
+    "karma-firefox-launcher": "*",
+    "karma-jasmine": "*",
+    "karma-junit-reporter": "*",
+    "karma-ng-html2js-preprocessor": "*",
+    "karma-ng-scenario": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-script-launcher": "*",
+    "load-grunt-tasks": "~0.2.0",
+    "matchdep": "*",
+    "phantomjs": "*",
+    "protractor": "~0.23.1",
+    "time-grunt": "~0.2.1",
+    "tmp": "0.0.23"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
