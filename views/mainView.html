@@ -1,6 +1,13 @@
-<div class="center" class="container">
+<div class="wrapper" id="login">
   <div class="row">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non distinctio, similique nisi ipsum consectetur modi delectus ipsam hic vitae, soluta voluptates voluptate, odio ea iure minima quia amet beatae.</p>
+    <h1>Welcome</h1>
   </div>
-
+  <div class="row">
+    <form role="form center">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="username" id="username" placeholder="Your name ...">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg center-block" ng-click="signIn(username)">Sign in</button>
+    </form>
+  </div>
 </div>

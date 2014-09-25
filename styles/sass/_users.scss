@@ -1,0 +1,19 @@
+#users {
+  margin-top: 7%;
+  .row {
+    margin: 10px 0;
+  }
+  #insert-new {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px 10px 10px 10px;
+  }
+  #users-list {
+    table thead tr td {
+      background-color: #eee;
+    }
+    table tbody tr td.action {
+      text-align:center;
+    }
+  }
+}
