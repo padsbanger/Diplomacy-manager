@@ -29,11 +29,7 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService',
         $scope.sort.column = column;
         $scope.sort.descending = false;
       }
-      console.log($scope.sort.descending);
-      console.log($scope.sort.column);
     };
-
-
 
     $scope.removeUser = function(userId) {
       $scope.users.splice(userId, 1);
