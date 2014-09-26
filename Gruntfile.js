@@ -234,6 +234,7 @@ module.exports = function(grunt) {
       'bower:install',
       'sass',
       'concat',
+      'karma:unit',
       'connect',
       'watch'
     ]);

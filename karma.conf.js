@@ -7,19 +7,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+
       'libs/angular/angular.js',
       'libs/angular-animate/angular-animate.js',
       'libs/angular-loader/angular-loader.js',
       'libs/angular-mocks/angular-mocks.js',
       'libs/angular-route/angular-route.js',
-      'libs/angular-scenario/angular-scenario.js',
-
-      'js/src/app.js',
-      'js/src/controllers/*.js',
-      'js/src/filters/*.js',
-      'js/src/services/*.js',
-      'test/unit/**/*.js'
+      'js/src/**/*.js',
+      'test/unit/*.js'
     ],
+
+    preprocessors: {
+      'modules/**/views/*.html': ['html2js']
+    },
 
     frameworks: [
       'jasmine'
@@ -28,6 +28,13 @@ module.exports = function(config) {
     // list of files to exclude
     exclude: [],
 
+    // test results reporter to use
+    // possible values: dots || progress || growl
+    reporters: ['progress', 'junit'],
+
+    junitReporter: {
+      outputFile: 'test-results.xml'
+    },
 
     // web server port
     port: 8080,
@@ -56,7 +63,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
 
   });
 };
