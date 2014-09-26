@@ -15,5 +15,17 @@
     table tbody tr td.action {
       text-align:center;
     }
+    td.ally {
+      color: green;
+    }
+    td.enemy {
+      color: red;
+    }
+    td.nap {
+      color: blue;
+    }
+    td.vassal {
+      color: orange;
+    }
   }
 }

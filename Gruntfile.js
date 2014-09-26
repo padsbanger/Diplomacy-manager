@@ -80,12 +80,16 @@ module.exports = function(grunt) {
         dest: 'js/build/libs.js'
       },
       controllers: {
-        src: ['js/src/controllers/**/*.js'],
+        src: ['js/src/controllers/*.js'],
         dest: 'js/build/controllers.js'
       },
       services: {
-        src: ['js/src/services/**/*.js'],
+        src: ['js/src/services/*.js'],
         dest: 'js/build/services.js'
+      },
+      filter: {
+        src: ['js/src/filters/*.js'],
+        dest: 'js/build/filters.js'
       },
     },
 
@@ -147,7 +151,7 @@ module.exports = function(grunt) {
         tasks: ['sass'],
         options: {
           livereload: {
-            port: 9001
+            port: 9002
           }
         },
       },
@@ -156,16 +160,25 @@ module.exports = function(grunt) {
         tasks: ['concat:services'],
         options: {
           livereload: {
-            port: 9001
+            port: 9002
           }
         },
       },
       controllers: {
-        files: ['js/src/controllers/**/*.js'],
+        files: ['js/src/controllers/*.js'],
         tasks: ['concat:controllers'],
         options: {
           livereload: {
-            port: 9001
+            port: 9002
+          }
+        },
+      },
+      filters: {
+        files: ['js/src/filters/*.js'],
+        tasks: ['concat:filters'],
+        options: {
+          livereload: {
+            port: 9002
           }
         },
       },
@@ -173,7 +186,7 @@ module.exports = function(grunt) {
         files: ['js/src/*.js'],
         options: {
           livereload: {
-            port: 9001
+            port: 9002
           }
         },
       },
@@ -181,7 +194,7 @@ module.exports = function(grunt) {
         files: ['views/*.html', 'index.html'],
         options: {
           livereload: {
-            port: 9001
+            port: 9002
           }
         },
       },
@@ -190,9 +203,9 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 1337,
+          port: 1338,
           hostname: '*',
-          livereload: 9001,
+          livereload: 9002,
           open: true,
         }
       },

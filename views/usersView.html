@@ -15,7 +15,7 @@
           <select class="form-control">
             <option selected="selected">Alliance Status</option>
             <option>Vassal</option>
-            <option>3Ally</option>
+            <option>Ally</option>
             <option>Enemy</option>
             <option>NAP</option>
           </select>
@@ -30,41 +30,17 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Alliance</td>
-          <td>Status</td>
-          <td>Date</td>
+          <td ng-repeat="(i, th) in head" ng-class="selectedCls(th)" ng-click="changeSorting(th)">{{th | capitalize}}</td>
           <td></td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Jane</td>
-          <td>Awesome Embers</td>
-          <td>Vassal</td>
-          <td>2.2.07.14</td>
-          <td class="action">X</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>Awesome Embers</td>
-          <td>Vassal</td>
-          <td>2.2.07.14</td>
-          <td class="action">X</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>Awesome Embers</td>
-          <td>Vassal</td>
-          <td>2.2.07.14</td>
-          <td class="action">X</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>Awesome Embers</td>
-          <td>Vassal</td>
-          <td>2.2.07.14</td>
-          <td class="action">X</td>
+        <tr ng-repeat="user in users | orderBy:sort.column:sort.descending">
+          <td>{{user.name}}</td>
+          <td>{{user.alliance}}</td>
+          <td class="{{user.status}}">{{user.status | capitalize}}</td>
+          <td>{{user.date | date}}</td>
+          <td class="action" ng-click="removeUser($index)">X</td>
         </tr>
       </tbody>
     </table>

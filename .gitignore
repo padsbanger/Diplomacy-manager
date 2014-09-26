@@ -36,3 +36,5 @@ js/build/
 styles/css/
 libs/
 lib
+
+test-results.xml
