@@ -38,7 +38,7 @@ diplomacyManager.factory('UsersService', [
     return {
       getUsers: function() {
         return users;
-      },
+      }
     };
   }
 ]);

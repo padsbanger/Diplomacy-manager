@@ -1,7 +1,7 @@
 'use strict';
 
-diplomacyManager.controller('usersController', ['$scope', 'UsersService',
-  function($scope, UsersService) {
+diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filter',
+  function($scope, UsersService, $filter) {
 
     $scope.users = UsersService.getUsers();
 
@@ -22,7 +22,6 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService',
     };
 
     $scope.changeSorting = function(column) {
-      var sort = $scope.sort;
       if ($scope.sort.column == column) {
         $scope.sort.descending = !$scope.sort.descending;
       } else {
@@ -31,7 +30,10 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService',
       }
     };
 
-    $scope.removeUser = function(userId) {
+    $scope.removeUser = function(user) {
+      // you can pass object to indexOf() ?
+      var userId = $scope.users.indexOf(user);
+
       $scope.users.splice(userId, 1);
     };
   }

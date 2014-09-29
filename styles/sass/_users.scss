@@ -13,7 +13,8 @@
       background-color: #eee;
     }
     table tbody tr td.action {
-      text-align:center;
+      text-align: center;
+      background: no-repeat center center url('/img/icon_remove.png');
     }
     td.ally {
       color: green;
@@ -26,6 +27,15 @@
     }
     td.vassal {
       color: orange;
+    }
+    td span {
+      padding-right: 15px;
+    }
+    span.sort-true {
+      background: no-repeat right center url('/img/icon_down.png');
+    }
+    span.sort-false {
+      background: no-repeat right center url('/img/icon_up.png');
     }
   }
 }

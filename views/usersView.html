@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="col-md-1">
-        <button type="submit" class="btn  btn-primary">Save</button>
+        <button type="submit" class="btn  btn-primary ">Save</button>
       </div>
     </form>
   </div>
@@ -30,17 +30,18 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <td ng-repeat="(i, th) in head" ng-class="selectedCls(th)" ng-click="changeSorting(th)">{{th | capitalize}}</td>
+          <td ng-repeat="(i, th) in head" ng-click="changeSorting(th)"><span ng-class="selectedCls(th)">{{th | capitalize}}</span></td>
           <td></td>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="user in users track by $index | orderBy:sort.column:sort.descending">
+        <!-- NOTE to myself, dont mix orderBy and 'track by $index' together ! -->
+        <tr ng-repeat="user in users | orderBy:sort.column:sort.descending">
           <td>{{user.name}}</td>
           <td>{{user.alliance}}</td>
           <td class="{{user.status}}">{{user.status | capitalize}}</td>
           <td>{{user.date | date}}</td>
-          <td class="action" ng-click="removeUser($index)">X</td>
+          <td class="action" ng-click="removeUser(user)"></td>
         </tr>
       </tbody>
     </table>

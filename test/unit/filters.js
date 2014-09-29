@@ -19,6 +19,16 @@ describe('Filter: filters', function() {
       expect(test).toEqual('Somestring');
     });
 
+    it('should do nothing', function() {
+      var test = filters('capitalize')(' ');
+      var test1 = filters('capitalize')('123');
+      var test2 = filters('capitalize')('@#$%^/');
+
+      expect(test).toEqual(' ');
+      expect(test1).toEqual('123');
+      expect(test2).toEqual('@#$%^/');
+    });
+
   });
 
 

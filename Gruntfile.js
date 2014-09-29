@@ -46,7 +46,6 @@ module.exports = function(grunt) {
 
     bower: {
       install: {
-        targetDir: 'libs/',
         cleanBowerDir: true,
         cleanup: true
       }
