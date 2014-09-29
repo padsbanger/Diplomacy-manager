@@ -14,8 +14,6 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
       d: "date",
     };
 
-    $scope.current = '';
-
     $scope.statuses = ['vassal', 'ally', 'enemy', 'nap'];
 
     $scope.sort = {
