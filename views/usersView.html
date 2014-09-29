@@ -1,28 +1,24 @@
 <div class="wrapper" id="users">
   <div class="row">
     <div class="col-md-10"></div>
-    <div class="col-md-2"><p class="text-right">Logged in as Jane</p></div>
+    <div class="col-md-2"><p class="text-right">Logged in as <strong>{{username}}</strong> </p></div>
   </div>
   <div class="row" id="insert-new">
     <form class="form" role="form">
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" class="form-control" id="alliancename" placeholder="Alliance name ...">
+          <input type="text"  class="form-control" ng-model="user.alliance" placeholder="Alliance name ...">
         </div>
       </div>
       <div class="col-md-5">
         <div class="form-group">
-          <select class="form-control">
-            <option selected="selected">Alliance Status</option>
-            <option>Vassal</option>
-            <option>Ally</option>
-            <option>Enemy</option>
-            <option>NAP</option>
+          <select ng-model="user.status" ng-options="status as (status | capitalize) for status in statuses" class="form-control">
+            <option value="" disabled selected>Alliance Status</option>
           </select>
         </div>
       </div>
       <div class="col-md-1">
-        <button type="submit" class="btn  btn-primary ">Save</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="!user.alliance" ng-click="addUser(user)">Save</button>
       </div>
     </form>
   </div>

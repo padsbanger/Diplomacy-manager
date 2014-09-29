@@ -1,9 +1,11 @@
 'use strict';
 
-diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filter',
-  function($scope, UsersService, $filter) {
+diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filter', '$localStorage', 'UserService',
+  function($scope, UsersService, $filter, $localStorage, UserService) {
 
     $scope.users = UsersService.getUsers();
+
+    $scope.username = UserService.getUserName();
 
     $scope.head = {
       a: "name",
@@ -12,6 +14,10 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
       d: "date",
     };
 
+    $scope.current = '';
+
+    $scope.statuses = ['vassal', 'ally', 'enemy', 'nap'];
+
     $scope.sort = {
       column: 'name',
       descending: false
@@ -19,6 +25,18 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
 
     $scope.selectedCls = function(column) {
       return column == $scope.sort.column && 'sort-' + $scope.sort.descending;
+    };
+
+    $scope.addUser = function(user) {
+
+      var newUser = {
+        name: $scope.username,
+        alliance: user.alliance,
+        status: user.status,
+        date: new Date().getTime()
+      };
+
+      $scope.users.push(newUser);
     };
 
     $scope.changeSorting = function(column) {

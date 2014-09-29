@@ -13,6 +13,7 @@ module.exports = function(config) {
       'libs/angular-loader/angular-loader.js',
       'libs/angular-mocks/angular-mocks.js',
       'libs/angular-route/angular-route.js',
+      "libs/ngstorage/ngStorage.js",
       'js/src/**/*.js',
       'test/unit/*.js'
     ],

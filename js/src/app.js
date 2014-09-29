@@ -1,7 +1,8 @@
 'use strict';
 
 var diplomacyManager = angular.module('diplomacyManager', [
-  'ngRoute'
+  'ngRoute',
+  'ngStorage'
 ]);
 /**
  * Configure the routing of the application

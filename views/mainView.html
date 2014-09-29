@@ -7,7 +7,7 @@
       <div class="form-group">
         <input type="text" class="form-control" ng-model="username" id="username" placeholder="Your name ...">
       </div>
-      <button type="submit" class="btn btn-primary btn-lg center-block" ng-click="signIn(username)">Sign in</button>
+      <button type="submit" class="btn btn-primary btn-lg center-block" ng-disabled="!username" ng-click="signIn(username)">Sign in</button>
     </form>
   </div>
 </div>

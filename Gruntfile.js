@@ -74,7 +74,8 @@ module.exports = function(grunt) {
           'libs/angular-loader/angular-loader.js',
           'libs/angular-mocks/angular-mocks.js',
           'libs/angular-route/angular-route.js',
-          'libs/angular-scenario/angular-scenario.js'
+          'libs/angular-scenario/angular-scenario.js',
+          "libs/ngstorage/ngStorage.js"
         ],
         dest: 'js/build/libs.js'
       },

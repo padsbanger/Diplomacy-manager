@@ -1,10 +1,11 @@
 'use strict';
 
-diplomacyManager.factory('UserService', [
-  function() {
+diplomacyManager.factory('UserService', [ '$localStorage',
+  function($localStorage) {
     return {
-      logInUser: function() {
-      },
+      getUserName: function() {
+        return $localStorage.username;
+      }
     };
   }
 ]);
