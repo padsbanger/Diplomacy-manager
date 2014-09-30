@@ -4,7 +4,7 @@ diplomacyManager.controller('mainController', ['$scope', '$location', '$localSto
   function($scope, $location, $localStorage) {
 
     $scope.signIn = function(username) {
-      $localStorage.username = $scope.username;
+      $localStorage.username = username;
       $location.path('/users');
     };
   }

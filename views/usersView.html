@@ -40,7 +40,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- NOTE to myself, dont mix orderBy and 'track by $index' together ! -->
+        <!-- NOTE to myself, dont mix 'orderBy' and 'track by $index' together ! -->
         <tr ng-repeat="user in users | orderBy:sort.column:sort.descending">
           <td>{{user.name}}</td>
           <td>{{user.alliance}}</td>

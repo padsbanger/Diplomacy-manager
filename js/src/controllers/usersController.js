@@ -24,7 +24,7 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
     $scope.statuses = ['vassal', 'ally', 'enemy', 'nap'];
 
     $scope.sort = {
-      column: 'name',
+      column: 'date',
       descending: false
     };
 
@@ -46,6 +46,7 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
       } else {
         $scope.users.push(newUser);
         $scope.error = false;
+        $scope.user = {};
       }
     };
 
