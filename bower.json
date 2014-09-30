@@ -19,7 +19,8 @@
     "angular-mocks": "~1.2.16",
     "angular-route": "~1.2.16",
     "ngstorage": "*",
-    "bootstrap-sass-official": "*"
+    "bootstrap-sass-official": "*",
+    "font-awesome": "*"
   },
   "devDependencies": {}
 }
