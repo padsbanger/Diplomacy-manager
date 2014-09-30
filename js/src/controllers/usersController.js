@@ -60,7 +60,6 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
     };
 
     $scope.removeUser = function(user) {
-      console.log(user);
       // you can pass object to indexOf() ?
       var userId = $scope.users.indexOf(user);
 
