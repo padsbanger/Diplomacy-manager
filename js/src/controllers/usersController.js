@@ -1,11 +1,18 @@
 'use strict';
 
-diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filter', '$localStorage', 'UserService',
-  function($scope, UsersService, $filter, $localStorage, UserService) {
+diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filter', '$localStorage', 'UserService', '$location',
+  function($scope, UsersService, $filter, $localStorage, UserService, $location) {
 
     $scope.users = UsersService.getUsers();
-
     $scope.username = UserService.getUserName();
+    $scope.error = false;
+
+    // "naive" logged user check
+    $scope.$watch('username', function(newValue, oldValue) {
+      if(newValue === oldValue && newValue === undefined) {
+        $location.path('/');
+      }
+    });
 
     $scope.head = {
       a: "name",
@@ -34,7 +41,12 @@ diplomacyManager.controller('usersController', ['$scope', 'UsersService', '$filt
         date: new Date().getTime()
       };
 
-      $scope.users.push(newUser);
+      if(newUser.status === undefined) {
+        $scope.error = 'Please select Alliance status.';
+      } else {
+        $scope.users.push(newUser);
+        $scope.error = false;
+      }
     };
 
     $scope.changeSorting = function(column) {

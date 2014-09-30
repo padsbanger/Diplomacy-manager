@@ -1,13 +1,17 @@
 <div class="wrapper" id="users">
   <div class="row">
     <div class="col-md-6"></div>
-    <div class="col-md-6 pull-right"><p class="text-right">Logged in as <strong>{{username}}</strong> </p></div>
+    <div class="col-md-6 pull-right">
+      <p class="text-right">Logged in as
+        <strong>{{username}}</strong>
+      </p>
+    </div>
   </div>
   <div class="row" id="insert-new">
     <form class="form" role="form">
       <div class="col-md-7">
         <div class="form-group">
-          <input type="text"  class="form-control" ng-model="user.alliance" placeholder="Alliance name ...">
+          <input type="text" class="form-control" ng-model="user.alliance" placeholder="Alliance name ...">
         </div>
       </div>
       <div class="col-md-3">
@@ -22,11 +26,16 @@
       </div>
     </form>
   </div>
+  <div class="row">
+    <div class="alert alert-danger" ng-show="error" role="alert">{{error}}</error>
+  </div>
   <div class="row" id="users-list">
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <td ng-repeat="(i, th) in head" ng-click="changeSorting(th)"><span ng-class="selectedCls(th)">{{th | capitalize}}</span></td>
+          <td ng-repeat="(i, th) in head" ng-click="changeSorting(th)">
+            <span ng-class="selectedCls(th)">{{th | capitalize}}</span>
+          </td>
           <td></td>
         </tr>
       </thead>
@@ -36,8 +45,9 @@
           <td>{{user.name}}</td>
           <td>{{user.alliance}}</td>
           <td class="{{user.status}}">{{user.status | capitalize}}</td>
-          <td>{{user.date | date}}</td>
-          <td class="action" ng-click="removeUser(user)"><i class="fa fa-times"></i></td>
+          <td>{{user.date | date: 'MM.dd.yy'}}</td>
+          <td class="action" ng-click="removeUser(user)"><i class="fa fa-times"></i>
+          </td>
         </tr>
       </tbody>
     </table>
