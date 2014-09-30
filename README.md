@@ -6,11 +6,10 @@ Orcs and Barbarians alliance members could use to manage which player is talking
 which alliance.
 
 ## Installing
-```js
+```ruby
 gem install sass
 ```
 
-## Installing
 ```js
 npm install -g grunt-cli bower
 ```
@@ -20,7 +19,7 @@ npm install -g grunt-cli bower
 grunt dev
 ```
 
-## Run tests
+## Running tests
 ```js
 grunt karma:unit
 ```

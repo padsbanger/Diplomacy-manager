@@ -9,8 +9,6 @@ describe('Service: usersService', function() {
   // Initialize the service and a mock backend
   beforeEach(inject(function($injector) {
     UsersService = $injector.get('UsersService');
-
-
   }));
 
   it('should return an array of users', function() {

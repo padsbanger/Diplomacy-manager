@@ -31,10 +31,18 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: dots || progress || growl
-    reporters: ['progress', 'junit'],
+    reporters: ['progress', 'coverage'],
 
-    junitReporter: {
-      outputFile: 'test-results.xml'
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'js/src/**/*.js': ['coverage']
+    },
+
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
     },
 
     // web server port

@@ -5,12 +5,13 @@ describe('Controller: UsersCtrl', function() {
   // load the controller's module
   beforeEach(module('diplomacyManager'));
 
-  var usersCtrl, scope, location, localStorage, UserService;
+  var usersCtrl, scope, location, localStorage, UserService, UsersService;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($injector, $controller, $rootScope, $location, $localStorage) {
     location = $location;
     UserService = $injector.get('UserService');
+    UsersService = $injector.get('UsersService');
     localStorage = $localStorage;
     scope = $rootScope.$new();
     usersCtrl = $controller('usersController', {
@@ -121,6 +122,19 @@ describe('Controller: UsersCtrl', function() {
 
     expect(scope.sort.column).toBe('alliance');
     expect(scope.sort.descending).toBe(false);
+  });
+
+  it('should remove user from users array', function() {
+
+    var userMock = {name: "Jane", alliance: "Balsamiq Kings", status: "nap", date: "02.05.14"};
+    scope.users = UsersService.getUsers();
+
+    expect(scope.users.length).toBe(5);
+
+    scope.removeUser(userMock);
+
+    expect(scope.users.length).toBe(4);
+
   });
 
 });
