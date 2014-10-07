@@ -1,4 +1,4 @@
-Diplomacy-manager [![Build Status](https://travis-ci.org/padsbanger/Diplomacy-manager.svg?branch=master)](https://travis-ci.org/padsbanger/Diplomacy-manager)
+Diplomacy-manager [![Build Status](https://travis-ci.org/padsbanger/Diplomacy-manager.svg?branch=master)](https://travis-ci.org/padsbanger/Diplomacy-manager) [![Coverage Status](https://img.shields.io/coveralls/padsbanger/Diplomacy-manager.svg)](https://coveralls.io/r/padsbanger/Diplomacy-manager)
 =================
 
 The aim of the sample application is to build a simple “diplomacy manager”, a tool that
