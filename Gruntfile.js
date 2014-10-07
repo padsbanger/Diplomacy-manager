@@ -200,6 +200,16 @@ module.exports = function(grunt) {
       },
     },
 
+    coveralls: {
+      options: {
+        debug: true,
+        coverage_dir: 'coverage',
+        dryRun: false,
+        force: true,
+        recursive: true
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -224,8 +234,10 @@ module.exports = function(grunt) {
     grunt.task.run([
       'bower:install',
       'concat',
-      'less',
-      'uglify'
+      'sass',
+      'uglify',
+      'karma:unit',
+      'coveralls'
     ]);
   });
 

@@ -30,23 +30,25 @@
     "karma-chrome-launcher": "*",
     "karma-coverage": "*",
     "karma-firefox-launcher": "*",
-    "karma-jasmine": "*",
+    "karma-jasmine": "^0.1.5",
     "karma-junit-reporter": "*",
     "karma-ng-html2js-preprocessor": "*",
     "karma-ng-scenario": "*",
-    "karma-phantomjs-launcher": "*",
+    "karma-phantomjs-launcher": "^0.1.4",
     "karma-script-launcher": "*",
     "load-grunt-tasks": "~0.2.0",
     "matchdep": "*",
     "phantomjs": "*",
     "protractor": "~0.23.1",
     "time-grunt": "~0.2.1",
-    "tmp": "0.0.23"
+    "tmp": "0.0.23",
+    "grunt-karma-coveralls": "^2.5.2",
+    "jasmine": "^2.0.1"
   },
   "engines": {
     "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "grunt karma:unit"
+    "test": "grunt production"
   }
 }
