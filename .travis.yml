@@ -6,3 +6,5 @@ before_install:
   - npm install -g bower
   - bower install
 install: npm install
+after_success:
+  - coveralls
