@@ -234,8 +234,6 @@ module.exports = function(grunt) {
     grunt.task.run([
       'bower:install',
       'concat',
-      'sass',
-      'uglify',
       'karma:unit',
       'coveralls'
     ]);
